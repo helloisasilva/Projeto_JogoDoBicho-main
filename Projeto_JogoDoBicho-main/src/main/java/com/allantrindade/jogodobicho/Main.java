@@ -651,6 +651,9 @@ public class Main {
             case "5":
                 novoJogador.mostrarPerdas();
                 break;
+            default:
+                System.out.println("Opção inválida.");
+                break;
             } 
             
             if (op.equals("6")){
