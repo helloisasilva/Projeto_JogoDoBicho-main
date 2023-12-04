@@ -3,15 +3,7 @@ package com.allantrindade.jogodobicho.Jogo;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.allantrindade.jogodobicho.Apostas.Aposta;
-import com.allantrindade.jogodobicho.Apostas.ApostaCentena;
-import com.allantrindade.jogodobicho.Apostas.ApostaDezena;
-import com.allantrindade.jogodobicho.Apostas.ApostaGrupo;
-import com.allantrindade.jogodobicho.Apostas.ApostaMilhar;
-import com.allantrindade.jogodobicho.Apostas.DuqueDezena;
-import com.allantrindade.jogodobicho.Apostas.DuqueGrupo;
-import com.allantrindade.jogodobicho.Apostas.TernoDezena;
-import com.allantrindade.jogodobicho.Apostas.TernoGrupo;
+import com.allantrindade.jogodobicho.Apostas.*;
 
 
 public class Jogador {
@@ -23,10 +15,6 @@ public class Jogador {
     public Jogador(String name){
         nome = name;
         apostas = new ArrayList<>();
-    }
-
-    public Jogador() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     public String getNome() {
@@ -101,7 +89,7 @@ public class Jogador {
                 List<String> gruposApostados = new ArrayList<>();
                 gruposApostados.addAll(ternoGrupo.getGruposApostados());
 
-                System.out.println("Tipo de aposta: Duque de grupo");
+                System.out.println("Tipo de aposta: Terno de grupo");
                 System.out.println("Grupos apostados: " + gruposApostados);
                 System.out.println("Valor apostado: " + ternoGrupo.getValor());
                 System.out.println("----------------------------");
@@ -111,7 +99,7 @@ public class Jogador {
                 List<String> dezenasApostadas = new ArrayList<>();
                 dezenasApostadas.addAll(duqueDezena.getDezenasApostadas());
 
-                System.out.println("Tipo de aposta: Duque de grupo");
+                System.out.println("Tipo de aposta: Duque de Dezena");
                 System.out.println("Grupos apostados: " + dezenasApostadas);
                 System.out.println("Valor apostado: " + duqueDezena.getValor());
                 System.out.println("----------------------------");
@@ -121,7 +109,7 @@ public class Jogador {
                 List<String> dezenasApostadas = new ArrayList<>();
                 dezenasApostadas.addAll(ternoDezena.getDezenasApostadas());
 
-                System.out.println("Tipo de aposta: Duque de grupo");
+                System.out.println("Tipo de aposta: Terno de Dezena");
                 System.out.println("Grupos apostados: " + dezenasApostadas);
                 System.out.println("Valor apostado: " + ternoDezena.getValor());
                 System.out.println("----------------------------");

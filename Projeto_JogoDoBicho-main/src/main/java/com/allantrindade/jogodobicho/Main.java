@@ -653,6 +653,10 @@ public class Main {
                 break;
             } 
             
+            if (op.equals("6")){
+                System.out.println("Até mais, "+ novoJogador.getNome() + "!");
+                break;
+            }
             sc = new Scanner(System.in);
             
         }    

@@ -58,14 +58,14 @@ public class Regras {
             {"Milhar(Aposta em um milhar)","1ª posição","4000 * ValorApostado"},
             {"                        ","demais posições", "4000/5 * ValorApostado"},
             
-            {"Duque de Grupo(Aposta em dois grupos de animais)","1ª 2ª posição","18.5 * ValorApostado"},
+            {"Duque de Grupo(Aposta em dois grupos de animais)","Qualquer posição","18.5 * ValorApostado"},
             
-            {"Terno de Grupo(Aposta em tres grupos de animais)","1ª, 2ª e 3ª posição","130 * ValorApostado"},
+            {"Terno de Grupo(Aposta em tres grupos de animais)","Qualquer posição","130 * ValorApostado"},
 
             
-            {"Duque de Dezena(Aposta em duas dezenas)","1ª e 2ª posição","300 * ValorApostado"},
+            {"Duque de Dezena(Aposta em duas dezenas)","Qualquer posição","300 * ValorApostado"},
             
-            {"Terno de Dezena(Aposta em tres dezenas)", "1ª posição", "3000 * ValorApostado"},
+            {"Terno de Dezena(Aposta em tres dezenas)", "Qualquer posição", "3000 * ValorApostado"},
    
    
         };

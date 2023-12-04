@@ -62,7 +62,7 @@ public abstract class Aposta {
     }
 
     public void setGruposApostados(String grupos) {
-        this.gruposApostados.add(grupo);
+        this.gruposApostados.add(grupos);
     }
 
     public void setDezenasApostadas(String dezenas) {
