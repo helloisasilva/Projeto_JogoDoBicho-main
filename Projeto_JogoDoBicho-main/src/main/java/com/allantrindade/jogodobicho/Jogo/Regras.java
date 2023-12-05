@@ -2,7 +2,7 @@ package com.allantrindade.jogodobicho.Jogo;
 
 public class Regras {
 
-    public static void regasGerais() {
+    public static void regrasGerais() {
             char caractere = '-';
             int quantidade = 150;
             String resultado = String.valueOf(caractere).repeat(quantidade);
