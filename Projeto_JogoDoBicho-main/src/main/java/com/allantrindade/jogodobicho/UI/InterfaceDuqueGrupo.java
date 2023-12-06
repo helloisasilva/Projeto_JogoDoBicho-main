@@ -1,4 +1,4 @@
-package com.allantrindade.jogodobicho;
+package com.allantrindade.jogodobicho.UI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,12 +85,14 @@ public class InterfaceDuqueGrupo {
 
             System.out.println("\nParabéns! Você ganhou R$"+ valorObtido + " com esta aposta.");
             this.verificador = true;
+            sc.close();
         }
         else {
             novoJogador.incrementarPerda(vlr);
             novoJogador.incrementarApostas(jogada);
             System.out.println("\nInfelizmente você perdeu...\nMais sorte na próxima vez!");
             this.verificador = true;
+            sc.close();
         }       
     }
             

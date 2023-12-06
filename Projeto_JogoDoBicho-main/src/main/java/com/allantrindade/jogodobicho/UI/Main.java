@@ -1,4 +1,4 @@
-package com.allantrindade.jogodobicho;
+package com.allantrindade.jogodobicho.UI;
 
 import java.util.Scanner;
 import com.allantrindade.jogodobicho.Jogo.*;
@@ -116,6 +116,7 @@ public class Main {
             
             if (op.equals("6")){
                 System.out.println("Até mais, "+ novoJogador.getNome() + "!");
+                sc.close();
                 break;
             }
             sc = new Scanner(System.in);

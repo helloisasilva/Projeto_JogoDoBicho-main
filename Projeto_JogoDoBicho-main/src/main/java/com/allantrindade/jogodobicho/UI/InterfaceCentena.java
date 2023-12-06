@@ -1,4 +1,4 @@
-package com.allantrindade.jogodobicho;
+package com.allantrindade.jogodobicho.UI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ public class InterfaceCentena {
         System.out.println("Deseja apostar no 1º prêmio ou em todos os prêmios? (C - 1º prêmio / T - Todos os prêmios)");
         String modal2 = sc.nextLine().toUpperCase();
 
-        System.out.println("Apostou na centena "+(centena) +", que corresponde ao animal "+jogo.getAnimal(centena) + ".");
+        System.out.println("Apostou na centena "+(centena) +", que corresponde ao animal "+jogo.getAnimal(centena).getNome() + " " + jogo.getAnimal(centena).getGrupo());
                 
         System.out.println("Qual o valor da aposta?");
         double vlr = sc.nextDouble();
@@ -92,12 +92,14 @@ public class InterfaceCentena {
 
             System.out.println("\nParabéns! Você ganhou R$"+ valorObtido + " com esta aposta.");
             this.verificador = true;
+            sc.close();
         }
         else {
             novoJogador.incrementarPerda(vlr);
             novoJogador.incrementarApostas(jogada);
             System.out.println("\nInfelizmente você perdeu...\nMais sorte na próxima vez!");
             this.verificador = true;
+            sc.close();
         }
     }
             

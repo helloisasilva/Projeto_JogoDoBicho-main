@@ -1,4 +1,4 @@
-package com.allantrindade.jogodobicho;
+package com.allantrindade.jogodobicho.UI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public class InterfaceTernoDezena {
         System.out.println("Agora a terceira dezena (00 a 99): ");
         String dezena3 = sc.nextLine().toUpperCase();
 
-        System.out.println("Apostou nas dezenas: "+((dezena1)+(", "+dezena2)+(" e "+dezena3))+", que correspondem aos animais: "+jogo.getAnimal(dezena1) +", "+jogo.getAnimal(dezena2)+" e "+jogo.getAnimal(dezena3));
+        System.out.println("Apostou nas dezenas: "+((dezena1)+(", "+dezena2)+(" e "+dezena3))+", que correspondem aos animais: "+jogo.getAnimal(dezena1).getNome() +", "+jogo.getAnimal(dezena2).getNome()+" e "+jogo.getAnimal(dezena3).getNome());
 
         System.out.println("Qual o valor da aposta?");
         double vlr = sc.nextDouble();
@@ -102,12 +102,14 @@ public class InterfaceTernoDezena {
 
             System.out.println("\nParabéns! Você ganhou R$"+ valorObtido + " com esta aposta.");
             this.verificador = true;
+            sc.close();
         }
         else {
             novoJogador.incrementarPerda(vlr);
             novoJogador.incrementarApostas(jogada);
             System.out.println("\nInfelizmente você perdeu...\nMais sorte na próxima vez!");
             this.verificador = true;
+            sc.close();
         }
     }
     public boolean getVerificador(){
