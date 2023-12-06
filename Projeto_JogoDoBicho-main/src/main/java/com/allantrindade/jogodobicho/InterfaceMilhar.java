@@ -29,13 +29,15 @@ public class InterfaceMilhar {
         System.out.println("Deseja apostar no 1º prêmio ou em todos os prêmios? (C - 1º prêmio / T - Todos os prêmios)");
         String modal2 = sc.nextLine().toUpperCase();
 
-        System.out.println("Apostou em "+ jogo.getAnimal(milhar) + ".");
+        System.out.println("Apostou no milhar: "+(milhar)+", que corresponde ao animal "+ jogo.getAnimal(milhar) + ".");
 
         System.out.println("Qual o valor da aposta?");
         double vlr = sc.nextDouble();
 
         ApostaMilhar jogada = new ApostaMilhar(jogo.getAnimal(milhar), modal2, milhar, vlr);
+        System.out.println("\n----------------------");
         System.out.println("Hora dos resultados!");
+        
 
         // Sorteio 
         List<String> sorteados = new ArrayList<>();
@@ -63,8 +65,9 @@ public class InterfaceMilhar {
 
         // Print dos milhares sorteados e os animais que representam
         System.out.println("Os milhares sorteados foram:");
+        System.out.println("----------------------");
         for (int i = 0; i < 5; i++){
-            System.out.println(sorteados.get(i) + " (" + animalSorteado.get(i).getNome() + ")");
+            System.out.println("-> "+sorteados.get(i) + " (" + animalSorteado.get(i).getNome() + ")");
         }
 
         // Verificação do milhar apostada com os milhares sorteados
@@ -73,13 +76,13 @@ public class InterfaceMilhar {
             novoJogador.incrementarGanho(valorObtido);
             novoJogador.incrementarApostas(jogada);
 
-            System.out.println("Parabéns! Você ganhou R$"+ valorObtido + " com esta aposta.");
+            System.out.println("\nParabéns! Você ganhou R$"+ valorObtido + " com esta aposta.");
             this.verificador = true;
          }
         else {
             novoJogador.incrementarPerda(vlr);
             novoJogador.incrementarApostas(jogada);
-            System.out.println("Infelizmente você perdeu...\nMais sorte na próxima vez!");
+            System.out.println("\nInfelizmente você perdeu...\nMais sorte na próxima vez!");
             this.verificador = true;
          } 
         

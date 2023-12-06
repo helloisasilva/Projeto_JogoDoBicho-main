@@ -42,6 +42,7 @@ public class InterfaceDuqueGrupo {
         double vlr = sc.nextDouble();
 
         DuqueGrupo jogada = new DuqueGrupo(animaisApostados, vlr);
+        System.out.println("\n----------------------");
         System.out.println("Hora dos resultados!");
 
         // Sorteio
@@ -72,8 +73,9 @@ public class InterfaceDuqueGrupo {
 
         // Print dos animais sorteados e seus números
         System.out.println("Os animais sorteados foram:");
+        System.out.println("----------------------");
         for (Animal animal : sorteados){
-            System.out.println(animal.getNome() + " " + animal.getGrupo() + " " + animal.getNumeros());
+            System.out.println("-> "+animal.getNome() + " " + animal.getGrupo() + " " + animal.getNumeros());
         }
         // Verificação dos grupos sorteados com o grupo apostado
         if (resultado){
@@ -81,13 +83,13 @@ public class InterfaceDuqueGrupo {
             novoJogador.incrementarGanho(valorObtido);
             novoJogador.incrementarApostas(jogada);
 
-            System.out.println("Parabéns! Você ganhou R$"+ valorObtido + " com esta aposta.");
+            System.out.println("\nParabéns! Você ganhou R$"+ valorObtido + " com esta aposta.");
             this.verificador = true;
         }
         else {
             novoJogador.incrementarPerda(vlr);
             novoJogador.incrementarApostas(jogada);
-            System.out.println("Infelizmente você perdeu...\nMais sorte na próxima vez!");
+            System.out.println("\nInfelizmente você perdeu...\nMais sorte na próxima vez!");
             this.verificador = true;
         }       
     }

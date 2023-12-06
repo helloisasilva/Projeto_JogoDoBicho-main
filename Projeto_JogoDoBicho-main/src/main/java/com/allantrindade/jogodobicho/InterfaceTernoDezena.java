@@ -8,34 +8,41 @@ import com.allantrindade.jogodobicho.Apostas.*;
 import com.allantrindade.jogodobicho.Jogo.*;
 import com.allantrindade.jogodobicho.Padrões.*;
 
-public class InterfaceDezena {
+public class InterfaceTernoDezena {
     
     private Jogador novoJogador;
     protected boolean resultado;
     protected boolean verificador;
     
-    public InterfaceDezena(Jogador novoJogador) {
+    public InterfaceTernoDezena(Jogador novoJogador) {
      this.novoJogador = novoJogador;  
     }
         
-    
-    public void IniciaInterfaceD(){
+    public void IniciaInterfaceTD(){
 
         Scanner sc = new Scanner(System.in);
         JogoDoBicho jogo = new JogoDoBicho();
+        
+        System.out.println("Informe a primeira dezena que deseja apostar (00 a 99): ");
+        String dezena1 = sc.nextLine().strip();
 
-        System.out.println("Informe a dezena que deseja apostar (00 a 99): ");
-        String dezena = sc.nextLine().strip();
-                
-        System.out.println("Deseja apostar no 1º prêmio ou em todos os prêmios? (C - 1º prêmio / T - Todos os prêmios)");
-        String modal2 = sc.nextLine().toUpperCase();
+        System.out.println("A segunda dezena (00 a 99): ");
+        String dezena2 = sc.nextLine().toUpperCase();
 
-        System.out.println("Apostou na dezena: "+(dezena)+ ", que corresponde ao animal " + jogo.getAnimal(dezena) + ".");
-                
+        System.out.println("Agora a terceira dezena (00 a 99): ");
+        String dezena3 = sc.nextLine().toUpperCase();
+
+        System.out.println("Apostou nas dezenas: "+((dezena1)+(", "+dezena2)+(" e "+dezena3))+", que correspondem aos animais: "+jogo.getAnimal(dezena1) +", "+jogo.getAnimal(dezena2)+" e "+jogo.getAnimal(dezena3));
+
         System.out.println("Qual o valor da aposta?");
         double vlr = sc.nextDouble();
 
-        ApostaDezena jogada = new ApostaDezena(jogo.getAnimal(dezena), modal2, dezena, vlr);
+        List<Animal> apostados = new ArrayList<>();
+        apostados.add(jogo.getAnimal(dezena1));
+        apostados.add(jogo.getAnimal(dezena2));
+        apostados.add(jogo.getAnimal(dezena3));
+
+        TernoDezena jogada = new TernoDezena(apostados, vlr);
         System.out.println("\n----------------------");
         System.out.println("Hora dos resultados!");
 
@@ -44,14 +51,16 @@ public class InterfaceDezena {
         List<String> dezenaSorteados = new ArrayList<>();
         sorteados = jogo.sortearMilhares();
         for (String milhar : sorteados){
-        String dezenaSorteada = milhar.substring(2, 4);
-        dezenaSorteados.add(dezenaSorteada);
+            String dezenaSorteada = milhar.substring(2, 4);
+            dezenaSorteados.add(dezenaSorteada);
         }
+
         // Lista de animais usados no print
         List<Animal> animalSorteado = new ArrayList<>();
         for (String dezenas : dezenaSorteados){
             animalSorteado.add(jogo.getAnimal(dezenas));
-         }
+        }
+
         // Utilização do Iterator para verificar se há prêmios repetidos
         while (true){
             BichoIterator iterator = new BichoIterator(animalSorteado, sorteados.size());
@@ -60,21 +69,20 @@ public class InterfaceDezena {
                 animalSorteado.clear();
                 dezenaSorteados.clear();
                 sorteados.addAll(jogo.sortearMilhares());
-                        
+
                 for (String milhar : sorteados){
                     String dezenaSorteada = milhar.substring(2, 4);
                     dezenaSorteados.add(dezenaSorteada);
                 }
-                    
+
                 animalSorteado = new ArrayList<>();
                 for (String dezenas : dezenaSorteados){
                     animalSorteado.add(jogo.getAnimal(dezenas));
-                    }
                 }
+            }
 
-        else break;
-                }
-                
+            else break;
+        }
         // Utilização do Visitor para comparação
         ApostaVisitor visitor = new VerificadorApostaVisitor();
         boolean resultado = jogada.accept(visitor, sorteados);
@@ -94,15 +102,14 @@ public class InterfaceDezena {
 
             System.out.println("\nParabéns! Você ganhou R$"+ valorObtido + " com esta aposta.");
             this.verificador = true;
-         }
-         else {
+        }
+        else {
             novoJogador.incrementarPerda(vlr);
             novoJogador.incrementarApostas(jogada);
             System.out.println("\nInfelizmente você perdeu...\nMais sorte na próxima vez!");
             this.verificador = true;
         }
     }
-    
     public boolean getVerificador(){
         return this.verificador;
     }

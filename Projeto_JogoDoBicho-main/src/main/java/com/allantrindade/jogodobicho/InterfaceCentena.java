@@ -30,12 +30,13 @@ public class InterfaceCentena {
         System.out.println("Deseja apostar no 1º prêmio ou em todos os prêmios? (C - 1º prêmio / T - Todos os prêmios)");
         String modal2 = sc.nextLine().toUpperCase();
 
-        System.out.println("Apostou em "+ jogo.getAnimal(centena) + ".");
+        System.out.println("Apostou na centena "+(centena) +", que corresponde ao animal "+jogo.getAnimal(centena) + ".");
                 
         System.out.println("Qual o valor da aposta?");
         double vlr = sc.nextDouble();
 
         ApostaCentena jogada = new ApostaCentena(jogo.getAnimal(centena), modal2, centena, vlr);
+        System.out.println("\n----------------------");
         System.out.println("Hora dos resultados!");
 
         // Sorteio 
@@ -78,8 +79,9 @@ public class InterfaceCentena {
 
         // Print dos milhares sorteados e os animais que representam
         System.out.println("Os milhares sorteados foram:");
+        System.out.println("----------------------");
         for (int i = 0; i < 5; i++){
-            System.out.println(sorteados.get(i) + " (" + animalSorteado.get(i).getNome() + ")");
+            System.out.println("-> "+sorteados.get(i) + " (" + animalSorteado.get(i).getNome() + ")");
         }
 
         // Verificação da centena apostada com os milhares sorteados
@@ -88,13 +90,13 @@ public class InterfaceCentena {
             novoJogador.incrementarGanho(valorObtido);
             novoJogador.incrementarApostas(jogada);
 
-            System.out.println("Parabéns! Você ganhou R$"+ valorObtido + " com esta aposta.");
+            System.out.println("\nParabéns! Você ganhou R$"+ valorObtido + " com esta aposta.");
             this.verificador = true;
         }
         else {
             novoJogador.incrementarPerda(vlr);
             novoJogador.incrementarApostas(jogada);
-            System.out.println("Infelizmente você perdeu...\nMais sorte na próxima vez!");
+            System.out.println("\nInfelizmente você perdeu...\nMais sorte na próxima vez!");
             this.verificador = true;
         }
     }
