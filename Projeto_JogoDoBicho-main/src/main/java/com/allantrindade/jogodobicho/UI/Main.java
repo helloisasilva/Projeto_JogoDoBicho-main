@@ -109,14 +109,16 @@ public class Main {
             case "5":
                 novoJogador.mostrarPerdas();
                 break;
+            case "6":
+                System.out.println("Até mais, "+ novoJogador.getNome() + "!");
+                sc.close();
+                break;
             default:
                 System.out.println("Opção inválida.");
                 break;
             } 
             
             if (op.equals("6")){
-                System.out.println("Até mais, "+ novoJogador.getNome() + "!");
-                sc.close();
                 break;
             }
             sc = new Scanner(System.in);

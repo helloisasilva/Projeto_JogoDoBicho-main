@@ -25,7 +25,7 @@ public class ApostaGrupo extends Aposta {
             return valorMultiplicado;
         }
         else {
-            double valorMultiplicado = getValor() * (18/5);
+            double valorMultiplicado = getValor() * 3.6;
             return valorMultiplicado;
         }
     

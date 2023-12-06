@@ -86,20 +86,19 @@ public class InterfaceCentena {
 
         // Verificação da centena apostada com os milhares sorteados
         if (resultado){
-            double valorObtido = vlr * jogada.multiplicador();
+            double valorObtido = jogada.multiplicador();
             novoJogador.incrementarGanho(valorObtido);
             novoJogador.incrementarApostas(jogada);
+            novoJogador.incrementarPerda(vlr);
 
             System.out.println("\nParabéns! Você ganhou R$"+ valorObtido + " com esta aposta.");
             this.verificador = true;
-            sc.close();
         }
         else {
             novoJogador.incrementarPerda(vlr);
             novoJogador.incrementarApostas(jogada);
             System.out.println("\nInfelizmente você perdeu...\nMais sorte na próxima vez!");
             this.verificador = true;
-            sc.close();
         }
     }
             

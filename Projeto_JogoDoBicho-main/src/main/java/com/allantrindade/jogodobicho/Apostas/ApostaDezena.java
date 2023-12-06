@@ -24,7 +24,7 @@ public class ApostaDezena extends Aposta{
             return valorMultiplicado;
         }
         else {
-            double valorMultiplicado = getValor() * (60/5);
+            double valorMultiplicado = getValor() * 12;
             return valorMultiplicado;
         }
     }

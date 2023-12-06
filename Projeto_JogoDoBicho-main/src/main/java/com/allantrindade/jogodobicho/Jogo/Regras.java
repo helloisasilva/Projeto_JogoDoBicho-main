@@ -47,16 +47,16 @@ public class Regras {
             
             //1 linha                      //2linha     //3linha
             {"Grupo(Aposta em um animal)","1ª posição", "18 * ValorApostado"},
-            {"                        ","demais posições", "18/5 * ValorApostado"},
+            {"                        ","demais posições", "3,6 * ValorApostado"},
             
             {"Dezena(Aposta em uma dezena)", "1ª posição", "60 * ValorApostado"},
-            {"                         ","demais posições", "60/5 * ValorApostado"},
+            {"                         ","demais posições", "12 * ValorApostado"},
             
             {"Centena(Aposta em uma centena","1ª posição","600 * ValorApostado"},
-            {"                           ","demais posições", "600/5 * ValorApostado"},
+            {"                           ","demais posições", "120 * ValorApostado"},
             
             {"Milhar(Aposta em um milhar)","1ª posição","4000 * ValorApostado"},
-            {"                        ","demais posições", "4000/5 * ValorApostado"},
+            {"                        ","demais posições", "800 * ValorApostado"},
             
             {"Duque de Grupo(Aposta em dois grupos de animais)","Qualquer posição","18.5 * ValorApostado"},
             

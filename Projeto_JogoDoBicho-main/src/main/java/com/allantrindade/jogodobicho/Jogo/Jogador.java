@@ -48,6 +48,7 @@ public class Jogador {
                 System.out.println("Animal apostado: " + apostaGrupo.getAnimalApostado().getNome());
                 System.out.println("Modalidade: " + apostaGrupo.getModalidade());
                 System.out.println("Valor apostado: " + apostaGrupo.getValor());
+                
                 System.out.println("----------------------------");
             }
             else if (aposta instanceof ApostaDezena){

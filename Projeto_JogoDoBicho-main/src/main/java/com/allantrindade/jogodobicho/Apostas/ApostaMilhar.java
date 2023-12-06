@@ -24,7 +24,7 @@ public class ApostaMilhar extends Aposta{
             return valorMultiplicado;
         }
         else {
-            double valorMultiplicado = getValor() * (4000/5);
+            double valorMultiplicado = getValor() * 800;
             return valorMultiplicado;
         }
     }
