@@ -1,5 +1,5 @@
 # Jogo do Bicho
-#Repositório destinado ao projeto final da disciplina de programação 2;
+- Repositório destinado ao projeto final da disciplina de programação 2;
 
 ## Conceitos utilizados
 - Programação Orientada a Objetos no geral;
